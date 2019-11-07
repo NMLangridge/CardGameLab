@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
 
@@ -19,6 +20,23 @@ public class Deck {
                 this.cards.add(card);
             }
         }
+    }
+
+    public boolean shuffleCards() {
+        this.createCards();
+        Card option1 = this.cards.get(0);
+        Collections.shuffle(this.cards);
+        Card option2 = this.cards.get(0);
+        if (option1 == option2) {
+            return true;
+        }
+        return false;
+    }
+
+    public Card dealCard() {
+        this.shuffleCards();
+        Card cardToReturn = this.cards.remove(0);
+        return cardToReturn;
     }
 
 }

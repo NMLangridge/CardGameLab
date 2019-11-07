@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 public class DeckTest {
 
@@ -22,5 +23,15 @@ public class DeckTest {
         deck.createCards();
         assertEquals(52, deck.getDeck());
     }
+
+    @Test
+    public void shuffleCards() {
+        assertEquals(false, deck.shuffleCards());
+    }
+
+//    @Test
+//    public void dealCard() {
+//        assertEquals(1, deck.dealCard());
+//    }
 
 }
