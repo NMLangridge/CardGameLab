@@ -8,8 +8,17 @@ public class Deck {
         this.cards = new ArrayList<Card>();
     }
 
-    public ArrayList<Card> getDeck() {
-        return cards;
+    public int getDeck() {
+        return this.cards.size();
+    }
+
+    public void createCards() {
+        for (RankType rank : RankType.values()) {
+            for (SuitType suit : SuitType.values()) {
+                Card card = new Card(suit, rank);
+                this.cards.add(card);
+            }
+        }
     }
 
 }

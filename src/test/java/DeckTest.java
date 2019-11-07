@@ -14,7 +14,13 @@ public class DeckTest {
 
     @Test
     public void deckShouldStartEmpty() {
-        assertEquals(0, deck.getDeck().size());
+        assertEquals(0, deck.getDeck());
+    }
+
+    @Test
+    public void deckShouldHave52Cards() {
+        deck.createCards();
+        assertEquals(52, deck.getDeck());
     }
 
 }
